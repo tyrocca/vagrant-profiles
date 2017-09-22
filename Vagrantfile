@@ -67,13 +67,13 @@ Vagrant.configure("2") do |config|
   # documentation for more information about their specific syntax and use.
   config.vm.provision "shell", inline: <<-SHELL
     if [ ! -d dotfiles ]; then
-      sudo apt-get -y --force-yes update
-      sudo apt-get -y --force-yes upgrade
-      sudo apt-get -y --force-yes install curl
-      sudo apt-get -y --force-yes install git
-      sudo apt-get -y --force-yes install clang
+      sudo apt-get -y update
+      sudo apt-get -y upgrade
+      sudo apt-get -y install curl
+      sudo apt-get -y install git
+      sudo apt-get -y install clang
       sudo update-alternatives --install /usr/bin/cc cc /usr/bin/clang 50
-      sudo apt-get -y --force-yes install git kcachegrind linux-tools-generic bochs qemu
+      sudo apt-get -y install git kcachegrind linux-tools-generic bochs qemu
       git clone https://github.com/tyrocca/dotfiles.git
     fi
   SHELL
